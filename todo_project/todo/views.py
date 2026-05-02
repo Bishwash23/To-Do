@@ -23,3 +23,8 @@ class TaskEditView(UpdateView):
     fields = ['title']
     template_name = 'todo/edit.html'
     success_url = '/'
+
+class TaskDeleteView(DeleteView):
+    model = Task
+    template_name = 'todo/delete.html'
+    success_url = '/'

@@ -6,5 +6,6 @@
     <p><strong>Created At:</strong>{{ task.created_at }}</p>
 
     <a href="{% url 'edit' task.pk %}">Edit</a>
+    <a href="{% url 'delete' task.pk %}">Delete</a>
     <a href="{% url 'home' %}">Back to List</a>
 {% endblock %}
