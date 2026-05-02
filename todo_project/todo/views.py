@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Task
 
@@ -20,9 +20,19 @@ class TaskCreateView(CreateView):
 
 class TaskEditView(UpdateView):
     model = Task
-    fields = ['title']
+    fields = ['title', 'completed']
     template_name = 'todo/edit.html'
     success_url = '/'
+
+    def post(self, request, *args, **kwargs):
+        if 'completed' in request.POST and 'title' not in request.POST:
+            task = self.get_object()
+            task.completed = 'completed' in request.POST
+            task.save()
+            return redirect('home')
+
+        return super().post(request, *args, **kwargs)
+    
 
 class TaskDeleteView(DeleteView):
     model = Task
