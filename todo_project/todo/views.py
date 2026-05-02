@@ -17,3 +17,9 @@ class TaskCreateView(CreateView):
     fields = ['title']
     template_name = 'todo/add.html'
     success_url = '/'
+
+class TaskEditView(UpdateView):
+    model = Task
+    fields = ['title']
+    template_name = 'todo/edit.html'
+    success_url = '/'
