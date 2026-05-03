@@ -1,0 +1,62 @@
+/* Beginner-friendly Bootstrap tweaks */
+body {
+	padding-bottom: 40px;
+	background-color: #f8f9fa;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.card {
+	margin-bottom: 1rem;
+}
+
+.navbar-brand {
+	font-weight: 600;
+}
+
+/* Make list items easier to scan */
+.list-group-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.list-group-item a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.list-group-item:hover {
+	background-color: #f1f5f9;
+}
+
+/* Completed task look */
+.task-completed {
+	text-decoration: line-through;
+	color: #6c757d;
+}
+
+/* Small UI niceties */
+.form-control {
+	box-shadow: none;
+}
+
+.btn-group .btn {
+	min-width: 64px;
+}
+
+.small-muted {
+	font-size: 0.9rem;
+	color: #6c757d;
+}
+
+/* Center helper */
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Simple responsive tweaks for beginner look */
+@media (max-width: 576px) {
+	.btn-group .btn { padding-left: .5rem; padding-right: .5rem; }
+}
